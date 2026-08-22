@@ -1,0 +1,125 @@
+--- Modules/Site/resources/views/layouts/app.blade.php
++++ Modules/Site/resources/views/layouts/app.blade.php
+@@ -204,7 +204,7 @@
+                     @auth
+-                    <div id="acct" style="position:relative;">
++                    <div id="acct" style="position:relative; z-index: 9999999;">
+ 
+                         {{-- Trigger --}}
+                         <button
+                             type="button"
+                             onclick="(function(){
+                                 var p=document.getElementById('acctPanel');
+                                 p.style.display = p.style.display==='block' ? 'none' : 'block';
+                             })()"
+                             style="display:flex;
+                                    align-items:center;
+                                    gap:6px;
+                                    padding:6px 14px;
+-                                   background:#DC2626;
++                                   background:magenta;
+                                    color:#ffffff;
+                                    border:none;
+                                    border-radius:8px;
+                                    font-size:14px;
+                                    font-weight:500;
+-                                   cursor:pointer;">
++                                   cursor:pointer;
++                                   pointer-events: auto !important;">
+                             {{ auth()->user()->first_name ?? auth()->user()->name }}
+                             <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+                             </svg>
+                         </button>
+ 
+                         {{-- Panel --}}
+                         <div
+                             id="acctPanel"
+                             style="display:none;
+                                    position:absolute;
+                                    right:0;
+                                    top:calc(100% + 6px);
+                                    width:200px;
+                                    background:#ffffff;
+                                    border:1px solid #E5E7EB;
+                                    border-radius:10px;
+                                    box-shadow:0 8px 24px rgba(0,0,0,0.12);
+                                    z-index:999999;
+-                                   overflow:hidden;">
++                                   overflow:hidden;
++                                   pointer-events: auto !important;">
+ 
+                             <a href="{{ route('panel.listings.index') }}"
+                                style="display:block;
+                                       padding:12px 16px;
+                                       font-size:14px;
+                                       color:#111827;
+                                       text-decoration:none;
+                                       cursor:pointer;
+-                                      border-bottom:1px solid #F3F4F6;"
+-                               onmouseover="this.style.background='#F9FAFB'"
+-                               onmouseout="this.style.background='transparent'">
++                                      border-bottom:1px solid #F3F4F6;
++                                      pointer-events: auto !important;">
+                                 My Listings
+                             </a>
+ 
+                             <a href="{{ $profileRoute }}"
+                                style="display:block;
+                                       padding:12px 16px;
+                                       font-size:14px;
+                                       color:#111827;
+                                       text-decoration:none;
+                                       cursor:pointer;
+-                                      border-bottom:1px solid #F3F4F6;"
+-                               onmouseover="this.style.background='#F9FAFB'"
+-                               onmouseout="this.style.background='transparent'">
++                                      border-bottom:1px solid #F3F4F6;
++                                      pointer-events: auto !important;">
+                                 My Profile
+                             </a>
+ 
+                             <a href="{{ $favoritesRoute }}"
+                                style="display:block;
+                                       padding:12px 16px;
+                                       font-size:14px;
+                                       color:#111827;
+                                       text-decoration:none;
+                                       cursor:pointer;
+-                                      border-bottom:1px solid #F3F4F6;"
+-                               onmouseover="this.style.background='#F9FAFB'"
+-                               onmouseout="this.style.background='transparent'">
++                                      border-bottom:1px solid #F3F4F6;
++                                      pointer-events: auto !important;">
+                                 Favorites
+                             </a>
+ 
+                             <a href="{{ route('panel.inbox.index') }}"
+                                style="display:block;
+                                       padding:12px 16px;
+                                       font-size:14px;
+                                       color:#111827;
+                                       text-decoration:none;
+                                       cursor:pointer;
+-                                      border-bottom:1px solid #F3F4F6;"
+-                               onmouseover="this.style.background='#F9FAFB'"
+-                               onmouseout="this.style.background='transparent'">
++                                      border-bottom:1px solid #F3F4F6;
++                                      pointer-events: auto !important;">
+                                 Inbox
+                             </a>
+ 
+                             <a href="{{ route('logout.confirm') }}"
+                                style="display:block;
+                                       padding:12px 16px;
+                                       font-size:14px;
+                                       color:#DC2626;
+                                       text-decoration:none;
+-                                      cursor:pointer;"
+-                               onmouseover="this.style.background='#FEF2F2'"
+-                               onmouseout="this.style.background='transparent'">
++                                      cursor:pointer;
++                                      pointer-events: auto !important;">
+                                 Logout
+                             </a>
+ 
