@@ -70,7 +70,7 @@
                         <a href="{{ route('panel.listings.index') }}" class="account-secondary-button">Clear Filters</a>
                     @endif
 
-                    <a href="{{ route('panel.listings.create') }}" class="account-primary-button">New Listing</a>
+                    <a href="{{ route('panel.listings.create') }}" class="account-primary-button rounded-xl p-4 justify-center items-center">New Listing</a>
                 </div>
             </div>
 

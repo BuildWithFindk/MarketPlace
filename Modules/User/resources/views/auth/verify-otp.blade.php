@@ -89,7 +89,7 @@
 
         <!-- Footer -->
         <div class="mt-8 text-center text-sm text-gray-500 flex flex-wrap items-center justify-center gap-x-2 gap-y-1">
-            <span>© 2024 HajurKoAfno. All rights reserved.</span>
+            <span>© 2026 HajurKoAfno. All rights reserved.</span>
             <span class="hidden sm:inline">·</span>
             <div class="flex items-center gap-2">
                 <a href="#" class="hover:text-gray-900 transition-colors">Privacy Policy</a>

@@ -80,6 +80,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="csrf-token" content="{{ csrf_token() }}">
     <title>{{ $siteName }} @hasSection('title') - @yield('title') @endif</title>
+    <script
+        src="https://cdn.jsdelivr.net/gh/clashrelated/nepal-relief-banner@1.0.1/banner.min.js"
+        integrity="sha384-ho2P9tyM1ZVoVX96zkFRkCYyJRGoXCjXpSS1a9KFnTyCUXAf1mVz3HAjQJSST1wN"
+        crossorigin="anonymous"
+        data-lang="en"
+    ></script>
     @vite(['resources/css/app.css', 'resources/js/app.js'])
     @livewireStyles
 </head>
@@ -89,6 +95,7 @@
     class="min-h-screen font-sans antialiased bg-gray-50"
 >
     @if(! $demoLandingMode)
+    <x-announcement-banner position="top" />
     @if($simplePage)
     <nav class="sticky top-0 z-50 border-b border-[#dddfe2] bg-white shadow-sm">
         <div class="mx-auto flex min-h-[56px] max-w-[1120px] items-center justify-between gap-4 px-4">
